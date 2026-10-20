@@ -1,157 +1,242 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#09090f">
-  <title>XTOBI — Everything in One Place</title>
-  <meta name="description" content="Welcome to XTOBI, your all-in-one digital hub for tools, anime and technology.">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #09090f;
-      color: #f5f5ff;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 22px 7%;
-      border-bottom: 1px solid #252536;
-    }
-    .logo { font-size: 27px; font-weight: 900; letter-spacing: 3px; }
-    .logo span { color: #a78bfa; }
-    .tag { color: #b4b4c8; font-size: 12px; }
-    .hero {
-      text-align: center;
-      padding: 90px 20px 65px;
-      background: radial-gradient(ellipse at top, #282052 0%, #09090f 68%);
-    }
-    .pill {
-      display: inline-block;
-      border: 1px solid #55438b;
-      color: #c4b5fd;
-      padding: 8px 14px;
-      border-radius: 30px;
-      font-size: 12px;
-    }
-    h1 { font-size: clamp(42px, 10vw, 72px); margin: 24px 0 14px; }
-    h1 span {
-      background: linear-gradient(90deg, #a78bfa, #67e8f9);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-    .hero p { color: #b4b4c8; line-height: 1.8; max-width: 480px; margin: 0 auto 28px; }
-    .button {
-      display: inline-block;
-      background: #a78bfa;
-      color: #09090f;
-      padding: 14px 22px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 800;
-    }
-    main { max-width: 1050px; margin: auto; padding: 30px 20px 70px; }
-    .section-title { font-size: 25px; margin: 25px 0 8px; }
-    .sub { color: #a4a4b8; margin-bottom: 24px; font-size: 14px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-    .card {
-      background: #13131f;
-      border: 1px solid #29293d;
-      border-radius: 18px;
-      padding: 24px;
-      transition: transform .2s, border-color .2s;
-    }
-    .card:hover { transform: translateY(-4px); border-color: #8b5cf6; }
-    .emoji { font-size: 30px; }
-    .card h3 { margin: 16px 0 8px; }
-    .card p { color: #a4a4b8; line-height: 1.6; font-size: 14px; }
-    .card a { color: #c4b5fd; text-decoration: none; font-weight: 700; }
-    .about {
-      margin-top: 40px;
-      padding: 28px;
-      background: #13131f;
-      border-radius: 18px;
-      border: 1px solid #29293d;
-    }
-    footer { text-align: center; padding: 25px; color: #85859c; border-top: 1px solid #252536; font-size: 13px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#09090f">
+<title>XTOBI — Everything in One Place</title>
+<meta name="description" content="XTOBI: online tools, anime, technology and more.">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#09090f;color:#f5f5ff}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 7%;border-bottom:1px solid #252536}
+.logo{font-size:27px;font-weight:900;letter-spacing:3px}
+.logo span,h1 span{color:#a78bfa}
+.tag{color:#b4b4c8;font-size:12px}
+.hero{text-align:center;padding:75px 20px 55px;background:radial-gradient(ellipse at top,#282052,#09090f 68%)}
+.pill{display:inline-block;border:1px solid #55438b;color:#c4b5fd;padding:8px 14px;border-radius:30px;font-size:12px}
+h1{font-size:clamp(38px,9vw,68px);margin:24px 0 14px}
+.hero p{color:#b4b4c8;line-height:1.8;max-width:480px;margin:0 auto 28px}
+.button{display:inline-block;background:#a78bfa;color:#09090f;padding:14px 22px;border-radius:12px;text-decoration:none;font-weight:800}
+main{max-width:1050px;margin:auto;padding:30px 20px 70px}
+.section-title{font-size:25px;margin:25px 0 8px}
+.sub{color:#a4a4b8;margin-bottom:24px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:#13131f;border:1px solid #29293d;border-radius:18px;padding:22px;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:#8b5cf6}
+.emoji{font-size:30px}
+.card h3{margin:14px 0 8px}
+.card p{color:#a4a4b8;line-height:1.6;font-size:14px}
+.card a,.tool-open{color:#c4b5fd;text-decoration:none;font-weight:700}
+.about{margin-top:40px;padding:28px;background:#13131f;border-radius:18px;border:1px solid #29293d}
+input,textarea,select{width:100%;padding:13px;margin:7px 0;background:#09090f;border:1px solid #393950;border-radius:10px;color:white;font:inherit}
+textarea{min-height:110px;resize:vertical}
+button{padding:11px 15px;border:0;border-radius:10px;background:#a78bfa;color:#09090f;font-weight:800;font-size:14px;cursor:pointer;margin:5px 3px 5px 0}
+button.secondary{background:#29293d;color:#eee}
+#toolSearch{margin:12px 0 18px}
+.filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+.filters button{background:#191927;color:#c4b5fd;border:1px solid #35354c}
+.filters button.active{background:#a78bfa;color:#09090f}
+.toolbox{margin-top:24px;padding:22px;background:#13131f;border:1px solid #55438b;border-radius:18px;scroll-margin-top:20px}
+.toolbox h3{margin-top:0}
+.result{color:#67e8f9;overflow-wrap:anywhere;line-height:1.7}
+.qr{display:block;max-width:220px;width:100%;margin:15px auto;background:white}
+.hidden{display:none!important}
+footer{text-align:center;padding:25px;color:#85859c;border-top:1px solid #252536;font-size:13px}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="logo">XTO<span>BI</span></div>
-    <div class="tag">YOUR DIGITAL WORLD</div>
-  </header>
+<header>
+  <div class="logo">XTO<span>BI</span></div>
+  <div class="tag">YOUR DIGITAL WORLD</div>
+</header>
 
-  <section class="hero">
-    <div class="pill">✦ YOUR ALL-IN-ONE HUB</div>
-    <h1>Welcome to <span>XTOBI</span></h1>
-    <p>One destination. Endless possibilities. Explore tools, anime, technology and more — all in one place.</p>
-    <a class="button" href="#explore">Explore XTOBI ↗</a>
-  </section>
+<section class="hero">
+  <div class="pill">✦ YOUR ALL-IN-ONE HUB</div>
+  <h1>Welcome to <span>XTOBI</span></h1>
+  <p>One destination. Endless possibilities. Explore useful tools, anime, technology and more.</p>
+  <a class="button" href="#explore">Explore XTOBI ↗</a>
+</section>
 
-  <main id="explore">
-    <h2 class="section-title">Explore Everything</h2>
-    <p class="sub">Choose a category and discover what's possible.</p>
+<main id="explore">
+  <h2 class="section-title">Explore Everything</h2>
+  <p class="sub">Choose a category and discover what's possible.</p>
 
-    <div class="grid">
-      <article class="card">
-        <div class="emoji">🛠️</div>
-        <h3>Online Tools</h3>
-        <p>Discover useful digital tools for your everyday tasks.</p>
-        <a href="#tools">Explore tools ↗</a>
+  <div class="grid">
+    <article class="card">
+      <div class="emoji">🛠️</div><h3>Online Tools</h3>
+      <p>Useful tools for your everyday tasks.</p>
+      <a href="#tools">Explore tools ↗</a>
+    </article>
+    <article class="card">
+      <div class="emoji">🤖</div><h3>Telegram Bots</h3>
+      <p>Discover bot information and project updates.</p>
+      <a href="#bots">Explore bots ↗</a>
+    </article>
+    <article class="card">
+      <div class="emoji">🎬</div><h3>Anime World</h3>
+      <p>Discover anime and find your next watch.</p>
+      <a href="#anime">Explore anime ↗</a>
+    </article>
+    <article class="card">
+      <div class="emoji">👤</div><h3>About Me</h3>
+      <p>A personal corner for my projects and updates.</p>
+      <a href="#about">Discover more ↗</a>
+    </article>
+  </div>
+
+  <section id="tools">
+    <h2 class="section-title">🛠️ Online Tools</h2>
+    <p class="sub">Search a tool or select a category to get started.</p>
+
+    <input id="toolSearch" type="search" placeholder="🔎 Search tools..." aria-label="Search tools">
+
+    <div class="filters">
+      <button class="active" data-filter="all">All Tools</button>
+      <button data-filter="text">Text Tools</button>
+      <button data-filter="calc">Calculators</button>
+      <button data-filter="gen">Generators</button>
+    </div>
+
+    <div class="grid" id="toolGrid">
+      <article class="card tool-card" data-category="text" data-name="word counter text">
+        <div class="emoji">📝</div><h3>Word Counter</h3>
+        <p>Count words, characters and sentences.</p>
+        <button onclick="openTool('words')">Open Tool ↗</button>
       </article>
-
-      <article class="card">
-        <div class="emoji">🤖</div>
-        <h3>Telegram Bots</h3>
-        <p>Find bot information, features and project updates.</p>
-        <a href="#bots">Explore bots ↗</a>
+      <article class="card tool-card" data-category="text" data-name="case converter uppercase lowercase text">
+        <div class="emoji">🔠</div><h3>Case Converter</h3>
+        <p>Convert text to uppercase or lowercase.</p>
+        <button onclick="openTool('case')">Open Tool ↗</button>
       </article>
-
-      <article class="card">
-        <div class="emoji">🎬</div>
-        <h3>Anime World</h3>
-        <p>Discover anime, explore titles and find your next watch.</p>
-        <a href="#anime">Explore anime ↗</a>
+      <article class="card tool-card" data-category="calc" data-name="calculator math calculate">
+        <div class="emoji">🧮</div><h3>Calculator</h3>
+        <p>Perform basic arithmetic calculations.</p>
+        <button onclick="openTool('calc')">Open Tool ↗</button>
       </article>
-
-      <article class="card">
-        <div class="emoji">👤</div>
-        <h3>About Me</h3>
-        <p>A personal corner for my profile, projects and updates.</p>
-        <a href="#about">Discover more ↗</a>
-      </article>
-
-      <article class="card" id="tools">
-        <div class="emoji">⚡</div>
-        <h3>Coming Soon</h3>
-        <p>More useful tools and features are on the way.</p>
-        <a href="#about">Stay tuned ↗</a>
-      </article>
-
-      <article class="card">
-        <div class="emoji">🌐</div>
-        <h3>More Projects</h3>
-        <p>XTOBI is growing. This is just the beginning.</p>
-        <a href="#about">Learn more ↗</a>
+      <article class="card tool-card" data-category="gen" data-name="qr code generator">
+        <div class="emoji">📱</div><h3>QR Generator</h3>
+        <p>Create a QR code from text or a link.</p>
+        <button onclick="openTool('qr')">Open Tool ↗</button>
       </article>
     </div>
 
-    <section class="about" id="about">
-      <h2>About XTOBI</h2>
-      <p style="color:#b4b4c8;line-height:1.8">
-        XTOBI is my personal all-in-one digital space.
-        New ideas, projects and features will be added over time.
-      </p>
-    </section>
-    <div id="bots"></div>
-    <div id="anime"></div>
-  </main>
+    <p id="noResults" class="sub hidden">No tools found. Try another search.</p>
 
-  <footer>© 2026 XTOBI. Built for what's next.</footer>
+    <section id="toolbox" class="toolbox hidden">
+      <button class="secondary" onclick="closeTool()">✕ Close Tool</button>
+      <div id="toolContent"></div>
+    </section>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About XTOBI</h2>
+    <p style="color:#b4b4c8;line-height:1.8">XTOBI is my personal all-in-one digital space. New ideas, projects and features will be added over time.</p>
+  </section>
+  <section class="about" id="bots"><h2>🤖 Telegram Bots</h2><p>Bot information and updates coming soon.</p></section>
+  <section class="about" id="anime"><h2>🎬 Anime World</h2><p>Anime content and recommendations coming soon.</p></section>
+</main>
+
+<footer>© 2026 XTOBI. Built for what's next.</footer>
+
+<script>
+const search = document.getElementById('toolSearch');
+const cards = [...document.querySelectorAll('.tool-card')];
+const filterButtons = [...document.querySelectorAll('[data-filter]')];
+let category = 'all';
+
+function filterTools(){
+  const q = search.value.toLowerCase().trim();
+  let count = 0;
+  cards.forEach(card => {
+    const matchesCategory = category === 'all' || card.dataset.category === category;
+    const matchesSearch = card.dataset.name.includes(q) || card.innerText.toLowerCase().includes(q);
+    card.classList.toggle('hidden', !(matchesCategory && matchesSearch));
+    if(matchesCategory && matchesSearch) count++;
+  });
+  document.getElementById('noResults').classList.toggle('hidden', count !== 0);
+}
+search.addEventListener('input', filterTools);
+filterButtons.forEach(button => button.addEventListener('click', () => {
+  category = button.dataset.filter;
+  filterButtons.forEach(b => b.classList.toggle('active', b === button));
+  filterTools();
+}));
+
+function openTool(type){
+  const box = document.getElementById('toolbox');
+  const content = document.getElementById('toolContent');
+  box.classList.remove('hidden');
+  const tools = {
+    words: `<h3>📝 Word Counter</h3>
+      <textarea id="wordText" placeholder="Type or paste your text here..." oninput="countWords()"></textarea>
+      <p class="result" id="wordResult">Words: 0 · Characters: 0 · Sentences: 0</p>`,
+    case: `<h3>🔠 Case Converter</h3>
+      <textarea id="caseText" placeholder="Enter your text..."></textarea>
+      <button onclick="convertCase('upper')">UPPERCASE</button>
+      <button onclick="convertCase('lower')">lowercase</button>
+      <button onclick="convertCase('title')">Title Case</button>`,
+    calc: `<h3>🧮 Calculator</h3>
+      <input id="numA" type="number" placeholder="First number" inputmode="decimal">
+      <select id="operation"><option value="+">Add (+)</option><option value="-">Subtract (−)</option><option value="*">Multiply (×)</option><option value="/">Divide (÷)</option></select>
+      <input id="numB" type="number" placeholder="Second number" inputmode="decimal">
+      <button onclick="calculate()">Calculate</button><p class="result" id="calcResult"></p>`,
+    qr: `<h3>📱 QR Code Generator</h3>
+      <input id="qrText" placeholder="Enter text or website URL">
+      <button onclick="makeQR()">Generate QR</button>
+      <div id="qrResult"></div>
+      <p class="sub">Generating the QR image requires an internet connection.</p>`
+  };
+  content.innerHTML = tools[type] || '';
+  box.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function closeTool(){
+  document.getElementById('toolbox').classList.add('hidden');
+  document.getElementById('toolContent').innerHTML = '';
+}
+function countWords(){
+  const value = document.getElementById('wordText').value;
+  const words = value.trim() ? value.trim().split(/\s+/).length : 0;
+  const sentences = value.trim() ? (value.match(/[.!?]+/g)||[]).length : 0;
+  document.getElementById('wordResult').textContent =
+    `Words: ${words} · Characters: ${value.length} · Sentences: ${sentences}`;
+}
+function convertCase(type){
+  const el = document.getElementById('caseText');
+  if(type === 'upper') el.value = el.value.toUpperCase();
+  if(type === 'lower') el.value = el.value.toLowerCase();
+  if(type === 'title') el.value = el.value.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+}
+function calculate(){
+  const a = Number(document.getElementById('numA').value);
+  const b = Number(document.getElementById('numB').value);
+  const op = document.getElementById('operation').value;
+  if(document.getElementById('numA').value === '' || document.getElementById('numB').value === ''){
+    document.getElementById('calcResult').textContent = 'Please enter both numbers.';
+    return;
+  }
+  if(op === '/' && b === 0){
+    document.getElementById('calcResult').textContent = 'Cannot divide by zero.';
+    return;
+  }
+  const result = op === '+' ? a+b : op === '-' ? a-b : op === '*' ? a*b : a/b;
+  document.getElementById('calcResult').textContent = 'Result: ' + result;
+}
+function makeQR(){
+  const value = document.getElementById('qrText').value.trim();
+  const result = document.getElementById('qrResult');
+  if(!value){result.textContent = 'Please enter text or a URL first.';return;}
+  const img = document.createElement('img');
+  img.className = 'qr';
+  img.alt = 'Generated QR code';
+  img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=' + encodeURIComponent(value);
+  result.replaceChildren(img);
+}
+</script>
 </body>
 </html>
+
